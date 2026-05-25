@@ -1,0 +1,12 @@
+# CLIENT
+client/node_modules
+client/dist
+client/.env
+
+# SERVER
+server/node_modules
+server/.env
+
+# GENERAL
+.DS_Store
+Thumbs.db
