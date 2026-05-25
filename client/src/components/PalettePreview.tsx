@@ -12,11 +12,13 @@ function PalettePreview({
   copiedColor,
   onCopyColor,
 }: PalettePreviewProps) {
+  const safePalette = palette.slice(0, 5);
+
   return (
-    <div className="mx-auto mt-12 grid max-w-5xl grid-cols-5 gap-4">
-      {palette.map((color) => (
+    <div className="mx-auto mt-12 grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+      {safePalette.map((color, index) => (
         <motion.button
-          key={color}
+          key={`${color}-${index}`}
           onClick={() => onCopyColor(color)}
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
